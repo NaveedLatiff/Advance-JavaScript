@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Symbols</title>
+</head>
+
+<body>
+    <div class="main">
+
+    </div>
+    <script>
+        // Symbol is a data type
+        // It means Unique Value
+        // That's why here x and y are different
+        let x = Symbol("Hello")
+        let y = Symbol("Hello")
+
+        console.log(x === y)   //The answer will be false  because they re unique and there data type
+        //  and value will not be match
+
+        // We cannot directly print Symbols data type value in DOM
+        let main=document.querySelector(".main")
+        
+        // First we have to convert symbol data type into string
+        // let z=x.toString()
+        // main.innerHTML=(z)
+
+        // // By using .description we can print the value of symbol
+        main.innerHTML=(x.description)
+
+
+        // Using Symbol in Object
+        let age=Symbol()
+        let section=Symbol("section")
+        let obj={
+            // Can't use like this
+            // Symbol():23
+            // Can use like this
+            [age]:23,
+            name:"Naveed"
+        }
+         //Can also add key and value in object of symbol data type like this
+            obj[section.description]="B"
+
+        console.log(obj)
+        console.log(obj[age])
+
+        // If we convert object into JSON.stringify then it will not print the symbol data key and value 
+        console.log(JSON.stringify(obj))
+    //******** First we have to convert the Symbol data type into string then we ca  print obj in JSON format******
+
+
+    </script>
+</body>
+
+</html>
