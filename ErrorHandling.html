@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error Handling</title>
+</head>
+<body>
+    <script>
+        // Try Catch works synchronously
+        try{
+            item()
+            console.log("Practicing")
+    
+    }catch(err){
+        // console.log("Error Occured:",err)
+        console.log(err.name)
+        console.log(err.message)
+        console.log(err.stack)
+    }
+    // Types Of Errors
+    // *EvalError
+    // *RangeError
+    // *ReferenceError
+    // *SyntaxError
+    // *TypeError
+    // *URIError
+    // *AggregateError
+
+    // EvalError:
+    // The JavaScript EvalError occurs when the global eval() function is used in a way that is not allowed.
+    
+    //RangeError:
+    // A RangeError in JavaScript occurs when a value is not within the set or range of allowed values.
+    
+    // ReferenceError:
+    // A ReferenceError in JavaScript happens when you try to access a variable that hasn’t been declared or is out of scope.
+
+    // SyntaxError:
+    // A SyntaxError in JavaScript happens when the code you wrote breaks the language rules—basically, JS can't even begin to understand it because it's not valid grammar.
+
+    // TypeError:
+    // A TypeError in JavaScript happens when a value is used in an inappropriate way based on its type — for example, trying to call something that’s not a function or accessing a property of undefined.
+
+        </script>
+</body>
+</html>
