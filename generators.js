@@ -43,16 +43,18 @@ let result=generateIt()
 
 
 // function *gen(){
-//     // let result=yield
-//     // We can also perform operation
-//     let result=(yield)*2
-//     console.log(result)
+    // let result=yield
+    // We can also perform operation
+    // let result=(yield)*2
+    // console.log(result)
 // }
 
 // let x=gen()
 // x.next()
 // // We can pass the value to yield like this
 // x.next(400)
+
+
 
 
 
