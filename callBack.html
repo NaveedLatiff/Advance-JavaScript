@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Call Back</title>
+</head>
+
+<body>
+    <script>
+        // function getData(Id,Next) {
+        //     setTimeout(() => {
+        //         console.log(`Data is ${Id}`)
+        //         if(Next){
+        //             Next()
+        //         }
+        //     }, 3000)
+        // }
+
+        // #CallBackHell  -->Nested CallBack Stacked Below One Another Forming a Pyramid Structure
+        // getData(23,()=>{
+        //     getData(343,()=>{
+        //         getData(44)
+        //     })
+        // })
+
+        
+
+
+        // Promises
+        // Promise is an Object It has three State Pending,Resolve,Rejected
+        // It has 2 handlers reject and resolve        
+        // let promise=new Promise((resolve,reject)=>{
+        //     console.log("Salam...")
+        //     resolve("success")
+        //     reject()
+        // })
+        // function getData(Id){
+        //     return new  Promise((resolve,reject)=>{
+        //         setTimeout(() => {
+        //         console.log(`Data is ${Id}`)
+        //         // resolve("Success")
+        //         // reject("Error...")
+                
+        //     }, 6000)
+        //     })
+        // }
+        // let result=getData(33)
+        // result.then((res)=>{
+        //     console.log("Fullfiled" , res)
+        // })
+        // result.catch((err)=>{
+        //     console.log("Not Fullfiled" , err)
+        // })
+           
+        // Promise Chain
+        // function aysncfunction1(){
+        //     return new Promise((resolve,reject)=>{
+        //         setTimeout(()=>{
+        //         console.log("My name is Naveed")
+        //         resolve("Success1")
+        //         },3000)
+        //     })
+        // }
+        // function aysncfunction2(){
+        //     return new Promise((resolve,reject)=>{
+        //         setTimeout(()=>{
+        //         console.log("My name is Sarim")
+        //         resolve("Success2")
+        //         },3000)
+        //     })
+        // }
+        // let p1=aysncfunction1()
+        // p1.then((res)=>{
+        //     console.log(res)
+        //     let p2=aysncfunction2()
+        //     p2.then((res)=>{
+        //         console.log(res)
+        //     })
+        // })
+        
+        // CallBack Hell Example By Promise Chain
+        // function getData(Id) {
+        //     return new Promise((resolve,reject)=>{
+        //         setTimeout(() => {
+        //             console.log(`Data is ${Id}`)
+        //             resolve()
+
+        //         }, 5000)
+        //     })
+        // }
+        // getData(33).then(()=>{
+        //     getData(44).then(()=>{
+        //         getData(55)
+        //     }) 
+        // })
+
+        // Better Way TO Do It(Do it by this Method)
+        // getData(33).then(()=>{
+        //     return getData(44) 
+        // }).then(()=>{
+        //     return getData(55)
+        // })
+
+        // Async-Await
+        // It always return a Promise
+        
+        // CallBack Example by Async-Await
+        function getData(Id) {
+           return new Promise((resolve,reject)=>{
+               setTimeout(() => {
+                   console.log(`Data is ${Id}`)
+                   resolve()
+                }, 4000)
+            })
+        }
+        // Remember We have to Call it first
+        // async function getAllData(){
+        //     await getData(33)
+        //     await getData(53)
+        // }
+        // getAllData()
+        // If you don't want to call the function then you can use IIFE(Immediately Invoked Function Expression)
+        // IIFE is a function
+        (async function (){
+            await getData(33)
+            await getData(53)
+            await getData(43)
+        })();
+
+
+    </script>
+</body>
+
+</html>
